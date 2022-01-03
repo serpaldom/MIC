@@ -13,7 +13,7 @@ class bcolors:
     RESET = '\033[0m' #RESET COLOR
 
 # Your API key
-API_KEY = ''
+API_KEY = '67cc5a0bf17f72d985fd414462837d4af673ddf7bf4bc32f3d248fdaf0c9840f'
 OTX_SERVER = 'https://otx.alienvault.com/'
 otx = OTXv2(API_KEY, server=OTX_SERVER)
 
@@ -30,14 +30,14 @@ if args['ip']:
     if mode == 1:
         if len(alerts) == 0:
             print(bcolors.OK + str(args['ip']) + ' is NOT malicious by OTX ['+str(len(alerts))+' pulses detected]' + bcolors.RESET)
-        if len(alerts) > 0 and len(alerts) < 3:
+        if len(alerts) > 0 and len(alerts) <= 5:
             print(bcolors.WARNING + str(args['ip']) + ' is probably malicious by OTX ['+str(len(alerts))+' pulses detected]' + bcolors.RESET)
-        if len(alerts) > 3:
+        if len(alerts) > 5:
             print(bcolors.FAIL + str(args['ip']) + ' is malicious by OTX ['+str(len(alerts))+' pulses detected]' + bcolors.RESET)
     if mode == 2:
-        if len(alerts) > 0 and len(alerts) < 3:
+        if len(alerts) > 0 and len(alerts) <= 5:
             print(bcolors.WARNING + str(args['ip'])+ bcolors.RESET)
-        if len(alerts) > 3:
+        if len(alerts) > 5:
             print(bcolors.FAIL + str(args['ip'])+ bcolors.RESET)
 
 
