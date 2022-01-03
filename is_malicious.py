@@ -13,7 +13,7 @@ class bcolors:
     RESET = '\033[0m' #RESET COLOR
 
 # Your API key
-API_KEY = '67cc5a0bf17f72d985fd414462837d4af673ddf7bf4bc32f3d248fdaf0c9840f'
+API_KEY = ''
 OTX_SERVER = 'https://otx.alienvault.com/'
 otx = OTXv2(API_KEY, server=OTX_SERVER)
 
